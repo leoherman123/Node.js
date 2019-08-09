@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(#84CEEB, #5AB9EA,#7E685A)
+}
+
+/* Style the header */
+header {
+  border-style: solid;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  color: black;
+}
+
+.userNav
+{
+  width: 100%;
+  border-style: solid;
+  text-align: center;
+  font-size: 16px;
+  color: Black;
+  margin: 0;
+  padding: 0
+}
+
+.userNav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.userNav li{
+  display:inline;
+}
+
+.userNav a
+{
+    display: inline-block;
+    padding: 10px;
+    color: black;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 13%;
+  border-style: solid;
+  height: 500px;
+  background-image: linear-gradient(#84CEEB,#C2B9B0);
+
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+ text-align: left;
+ font-size: 20px
+}
+
+nav li a
+{
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover
+{
+  background-color: limegreen;
+  color: black;
+}
+
+
+
+article {
+  float: left;
+  padding: 20px;
+  width: 87%;
+  height: 500px;
+  background-color: #C2CAD0;
+  text-align: center;
+  border-style: solid;
+}
+
+article ul, ol
+{
+  padding: 15px;
+}
+
+.recipeTitle
+{
+  text-align: left;
+  font-size: 16px;
+}
+
+img
+{
+  width: 220px;
+  height: 175px;
+  float: left;
+  margin-right: 15px;
+}
+
+
+.recipeButton {
+  display: inline-block;
+   /* position: relative;
+  right: 375px;  */
+  padding: 5px 15px;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  outline: none;
+  color: white;
+  background-color: #00a1f1;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.recipeButton:hover {background-color: #3e8e41}
+
+.recipeButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/* Clear floats after the columns */
+ section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+ background-image: linear-gradient(to right, #C2B9B0, #E7717D,#7E685A);
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  color: black;
+  border-style: solid;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 1000px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
