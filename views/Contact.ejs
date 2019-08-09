@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="ContactUsCss.css">
+</head>
+<body>
+
+  <!-- partial views for the header and user nav -->
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+  <!-- Article for the main information on the webpage -->
+  <article>
+    <h1>Contact Us</h1>
+
+    <img src = "uncc.jpg" alt = "storeLocation">
+    <h1>Location</h1>
+    <p>Asian Cuisine For Us is located at<br>
+    8544 University City Blvd<br>
+    Charlotte, NC 28213.<br>
+    See <a id="locationlink" href="https://maps.google.com/">Google Maps</a> for directions.</p>
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+</body>
+</html>

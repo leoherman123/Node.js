@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Asian Cuisine For Us - HomePage</title>
+<link rel="stylesheet" type="text/css" href="/indexCss.css" />
+</head>
+
+<body>
+
+  <!-- partial views for the header and user nav -->
+<% include ./partials/header.ejs %>
+<% include ./partials/user-navigation.ejs %>
+
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+  <!-- Article for the webpage for the main informations -->
+  <article>
+    <h1><u>Hello And Welcome to Asian Cuisine For Us</u></h1>
+    <img src = "mainPagePic.jpg" alt = "asianCuisine">
+    <p>Asian cuisine includes several major regional cuisines: East Asian, Southeast Asian, South Asian, Central Asian, and Western Asian. A cuisine is a characteristic style of cooking practices and traditions,usually associated with a specific culture. Asia, being the largest and most populous continent, is home to many cultures, many of which have their own characteristic cuisine.</p>
+    <p>Ingredients common to many cultures in the East and Southeast regions of the continent include rice, ginger, garlic, sesame seeds, chilies, dried onions, soy, and tofu. Stir frying, steaming, and deep frying are common cooking methods.</p>
+    <p>While rice is common to most Asian cuisines, different varieties are popular in the various regions. Basmati rice is popular in the subcontinent, Jasmine rice is often found across the southeast, while long-grain rice is popular in China and short-grain in Japan and Korea.</p>
+    <p><b><u>For more information about the different parts of asian click the links below</u></b></p>
+
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_Asian_cuisines#East_Asian_cuisine">East Asian Cuisine (Hong Kong)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_Asian_cuisines#Southeast_Asian_cuisine">Southeast Asian Cuisine (Fujian)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_Asian_cuisines#South_Asian_cuisine">South Asian Cuisine (Hunan)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_Asian_cuisines#West_Asian_cuisine">Western Asian Cuisine (Sichuan)</a></li>
+    </ul>
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Asian Cuisine For Us - myItems</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="myItemsCss.css">
+
+<script>
+    $(document).ready(function(){
+        document.getEgetElementById('update').onclick = function(){
+              console.log("update");
+                };
+            });
+    });
+</script>
+</head>
+
+
+<body>
+
+  <!-- partial views for the header and user nav -->
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+
+<!-- Section for the information in the webpage -->
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+  <!-- Article for the main information in the webpage -->
+  <article>
+  <div class = "mainTitle">
+    <h1>Recipes Collection</h1>
+  </div>
+
+  <!-- Creating a table for the webpage to store in the user information about he recipes -->
+  <table>
+  <tr>
+    <th>Item Number</th>
+    <th>Recipe</th>
+    <th>Category</th>
+    <th>My Rating </th>
+    <th>button</th>
+
+    <th></th>
+  </tr>
+<% if(check == '1') { %>
+<% for(var i = 1; i < userItems.length; i++) { %>
+<tr>
+  <td><%= userItems[i].itemCode%></td>
+  <td><a href="/Categories/item/<%= userItems[i].itemCode %>"><%= userItems[i].itemName %></a></td>
+  <td><%= userItems[i].catalogCategory %></td>
+  <td><%= userItems[i].rating %></td>
+  <td>
+    <button type="submit" name="update"  onclick = "window.location.href= '/feedback/<%=userItems[i].itemCode%>'" >Update</button>
+    <button type="submit" name="delete" onclick = "window.location.href='/delete?itemCode=<%= userItems[i].itemCode %>'" >Delete</button>
+  </td>
+</tr>
+<% } %>
+<% } %>
+
+
+
+</table>
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+</body>
+</html>

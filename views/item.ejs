@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Asian Cuisine For Us - Mapo Tofu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/allRecipesCss.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <!-- partial views for the header and user nav -->
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+
+<!-- Section for the information of the webpage -->
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+
+  <!-- main information article of the webpage -->
+  <article>
+    <img src='<%= data.item.getImageURL %>' alt="<%= data.item.itemName %>">
+
+    <div class="recipeTitle">
+      <h2><%= data.item.itemName %></h2>
+      <br>
+      <p><%= data.item.description %></p>
+    </div>
+
+    <!-- button for saving or rating -->
+
+
+
+    <!-- temporary rating system -->
+
+
+
+    <br>
+
+    <div class="RecipeButtons">
+      <form >
+        <button type = "submit" formaction = "/Categories" class = "recipeButton">Return to menu / Continue</button>
+      </form>
+      <button type = "submit" class = "recipeButton" onclick = "window.location.href='/add?itemCode=<%= data.item.itemCode %>'"> Save it</button>
+
+    </div>
+
+
+
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+
+</body>
+</html>

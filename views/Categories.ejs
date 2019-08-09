@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Asian Cuisine For Us - Categories</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="CategoriesCss.css">
+
+</head>
+
+<body>
+
+  <!-- partial views for the header and user nav -->
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+
+
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+
+  <!-- Article for the main informations about the webpage -->
+  <article>
+    <h1><b><u>Categories</u></b></h1>
+
+    <!-- including the category from the database -->
+    <%
+         console.log("Categories:"+data.categories);
+
+         <!-- creating a loop to loop through the categories array from categoriesList.js -->
+         for(var i=0; i< data.categories.length; i++){ %>
+             <table class="categoryList">
+                 <thead>
+                     <tr>
+                        <!-- output the categories of each item -->
+                         <th class="categoryHeaders"><%= data.categories[i] %></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <%
+                     for(var j=0; j< data.items.length;j++){
+                        <!-- Checking if the categories matches the catalogCategory of each item in the database -->
+                         if(data.categories[i] === data.items[j].catalogCategory){ %>
+                         <tr>
+                            <!-- If the item matches the categories output the item name from the database -->
+                             <td class="categoryItemList"><a href="/Categories/item/<%= data.items[j].itemCode %>"><%= data.items[j].itemName %></a></td>
+                         </tr>
+                        <% }
+                     }
+                      %>
+                 </tbody>
+             </table>
+             <% }%>
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+
+</body>
+</html>

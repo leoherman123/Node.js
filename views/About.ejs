@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="AboutUsCss.css">
+</head>
+<body>
+
+ <!-- partial views for the header and user nav -->
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+
+
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+
+  <!-- Article for the main information  -->
+  <article>
+    <h1>About Us</h1>
+    <img src = "recipeBook.jpg" alt = "recipeBook">
+    <p>We are a online cook book which provides people with the latest Asian cuisine
+    recipes, All of our cooking recipes are guarantees to be easy, fast and simple
+    for all cooks </p>
+
+    <p>Keep up with us for new updates to our recipes</p>
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+
+</body>
+</html>

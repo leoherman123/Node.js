@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Asian Cuisine For Us - Mapo Tofu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/feedback.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+  <!-- partial views for the header and user nav -->
+  <% include ./partials/header.ejs %>
+  <% include ./partials/user-navigation.ejs %>
+
+
+
+<!-- Section for the information of the webpage -->
+<section>
+
+  <!-- partial views for the site nav -->
+  <% include ./partials/site-navigation.ejs %>
+
+
+  <!-- main information article of the webpage -->
+  <article>
+
+
+    <!-- Title and picture of the recipe -->
+    <h2 class = "feedback">Give your feedback</h2>
+    <img src='<%= data.item.getImageURL %>' alt="<%= data.item.itemName %>">
+    <div class = "recipeTitle">
+      <h1><%= data.item.itemName %></h1>
+      <h1><%= data.item.catalogCategory%></h1>
+    </div>
+
+    <!-- button for confirming or made it or rating -->
+
+      <br>
+
+        <!-- A drop down rating for the user to select -->
+
+
+        <form method="POST">
+            <p class= "custom-title">My rating: </p>
+            <select name="rate" class = "dropdown">
+              <option value="1" <% if (data.rating == 1){ %>selected ='data.item.rating'<% } %> >1</option>
+              <option value="2" <% if (data.rating == 2 ){ %>selected ='data.item.rating'<% } %> >2</option>
+              <option value="3" <% if (data.rating == 3 ){ %>selected ='data.item.rating'<% } %> >3</option>
+              <option value="4" <% if (data.rating == 4 ){ %>selected ='data.item.rating'<% } %> >4</option>
+              <option value="5" <% if (data.rating == 5 ){ %>selected ='data.item.rating'<% } %> >5</option>
+              </select>
+              <input type="submit" class = "submit-button" value="Update">
+
+              <br><br><br>
+              <div class="MadeIt">
+                <p >
+                    Yes
+                    <input type="radio" name="madeIt" value='Yes' <% if (data.madeIt == "Yes" ){ %>checked<% } %> >
+                    No
+                    <input type="radio" name="madeIt" value='No' <% if (data.madeIt == "No" ){ %>checked<% } %> >
+
+                    <button type="submit" class="submitButton" name="action" value="madeIt">Update Made it</button>
+                </p>
+              </div>
+
+          </form>
+
+      </form>
+
+      <div class = "instructions">
+        <p><%= data.item.description%></p>
+      </div>
+
+
+  </article>
+</section>
+
+<!-- partial views for the footer -->
+<% include ./partials/footer.ejs %>
+
+
+</body>
+</html>
